@@ -7,12 +7,6 @@ GET http://localhost:3000/restaurants.json
 ### RESTAURANT show
 GET http://localhost:3000/restaurant/4072702673999819.json
 
-### SAVED_RESTAURANT index
-GET http://localhost:3000/my_restaurants.json
-
-### SAVED_RESTAURANT create
-POST http://localhost:3000/my_restaurant/create
-
 ### USER create
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -32,3 +26,24 @@ Content-Type: application/json
   "email": "test@test.com",
   "password": "password"
 }
+
+### MY_RESTAURANT index (user must be logged in)
+GET http://localhost:3000/my_restaurants.json
+Authorization: Bearer {{billyjwt}}
+
+### MY_RESTAURANT create (user must be logged in)
+POST http://localhost:3000/my_restaurant/create
+Authorization: Bearer {{billyjwt}}
+Content-Type: application/json
+
+{
+  "restaurant_id": 4195236487727458,
+  "restaurant_status": "go",
+  "restaurant_name": "Hot Woks Cool Sushi on Pulaski",
+  "restaurant_phone": "(773) 282-1818",
+  "hours": "Daily: 11:30am-9:30pm",
+  "price_range": "$$",
+  "cuisines": "Asian Fusion, Japanese, Sushi",
+  "address": "3930 N Pulaski Ave Chicago, IL 60641"
+}
+###

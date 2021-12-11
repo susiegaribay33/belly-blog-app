@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/restaurant/:restaurant_id' => 'restaurants#show'
 
   #my_restaurants
-  get '/my_restaurants' => 'restaurants#index'
+  get '/my_restaurants' => 'my_restaurants#index'
+  post '/my_restaurants' => 'my_restaurants#create'
 
   #users
   post "/users" => "users#create"
