@@ -1,0 +1,12 @@
+
+### RESTAURANT index
+GET http://localhost:3000/restaurants.json
+
+### RESTAURANT show
+GET http://localhost:3000/restaurant/4072702673999819.json
+
+### SAVED_RESTAURANT index
+GET http://localhost:3000/my_restaurants.json
+
+### SAVED_RESTAURANT create
+POST http://localhost:3000/my_restaurant/create
