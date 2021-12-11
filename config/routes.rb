@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/my_restaurants' => 'restaurants#index'
 
   #users
+  post "/users" => "users#create"
+
+  #sessions
+  post "/sessions" => "sessions#create"
 
   #friendships
 

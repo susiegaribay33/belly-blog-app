@@ -1,3 +1,5 @@
+#Test JWTs
+@billyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzkzMzYzNzR9.hWE4olrHiBFnunVX5iVSBRNQ0glWH7WGDJSdGUR7S7U
 
 ### RESTAURANT index
 GET http://localhost:3000/restaurants.json
@@ -10,3 +12,23 @@ GET http://localhost:3000/my_restaurants.json
 
 ### SAVED_RESTAURANT create
 POST http://localhost:3000/my_restaurant/create
+
+### USER create
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Billy Bob",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### SESSIONS create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
