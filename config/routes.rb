@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   #my_restaurants
   get '/my_restaurants' => 'my_restaurants#index'
   post '/my_restaurants' => 'my_restaurants#create'
+  get '/my_restaurants/:id' => 'my_restaurants#show'
+  patch "/my_restaurants/:id" => "my_restaurants#update"
 
   #users
   post "/users" => "users#create"
@@ -16,7 +18,9 @@ Rails.application.routes.draw do
 
   #friendships
 
+
   #content
+  get '/content' => 'contents#index'
 
   #comments
 

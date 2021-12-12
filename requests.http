@@ -1,5 +1,10 @@
 #Test JWTs
 @billyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzkzMzYzNzR9.hWE4olrHiBFnunVX5iVSBRNQ0glWH7WGDJSdGUR7S7U
+#^test@test.com
+
+@rubyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Mzk0MTE4NDB9.YiqL27GkvICZvuicGdQiV2pP4k7wyGFLcFfbEHr3Y30
+#^test2@test2.com
+
 
 ### RESTAURANT index
 GET http://localhost:3000/restaurants.json
@@ -12,8 +17,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Billy Bob",
-  "email": "test@test.com",
+  "name": "Ruby Sanchez",
+  "email": "test2@test2.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -23,7 +28,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test2@test2.com",
   "password": "password"
 }
 
@@ -32,7 +37,7 @@ GET http://localhost:3000/my_restaurants.json
 Authorization: Bearer {{billyjwt}}
 
 ### MY_RESTAURANT create (user must be logged in)
-POST http://localhost:3000/my_restaurant/create
+POST http://localhost:3000/my_restaurants
 Authorization: Bearer {{billyjwt}}
 Content-Type: application/json
 
@@ -46,4 +51,33 @@ Content-Type: application/json
   "cuisines": "Asian Fusion, Japanese, Sushi",
   "address": "3930 N Pulaski Ave Chicago, IL 60641"
 }
-###
+### MY_RESTAURANT show (user must be logged in)
+GET http://localhost:3000/my_restaurants/1.json
+Authorization: Bearer {{billyjwt}}
+
+### MY_RESTAURANT update status (user must be logged in)
+
+PATCH http://localhost:3000/my_restaurants/1
+Authorization: Bearer {{billyjwt}}
+content-type: application/json
+
+{
+  "restaurant_status": "been"
+}
+
+### FRIENDS create (sender must be logged in)
+POST http://localhost:3000/friends
+Authorization: Bearer {{rubyjwt}}
+Content-Type: application/json
+
+{
+  ""
+}
+
+### CONTENT index
+
+### CONTENT create
+
+### COMMENT index
+
+### COMMENT create
