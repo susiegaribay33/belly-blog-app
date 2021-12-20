@@ -1,5 +1,5 @@
 #Test JWTs
-@billyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzkzMzYzNzR9.hWE4olrHiBFnunVX5iVSBRNQ0glWH7WGDJSdGUR7S7U
+@billyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Mzk3NzIyNTR9.B-3EwGaVRs8UT3PIzx-49LAMnN2s9clmQJ6ceebd1nw
 #^test@test.com
 
 @rubyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Mzk0MTE4NDB9.YiqL27GkvICZvuicGdQiV2pP4k7wyGFLcFfbEHr3Y30
@@ -7,10 +7,23 @@
 
 
 ### RESTAURANT index
-GET http://localhost:3000/restaurants.json
+GET http://localhost:3000/restaurants/1.json
 
 ### RESTAURANT show
 GET http://localhost:3000/restaurant/4072702673999819.json
+
+### RESTAURANT search CUISINE
+GET http://localhost:3000/restaurants_cuisine/italian/2.json
+
+
+### RESTAURANT search ZIP
+GET http://localhost:3000/restaurants_zip/60629/2.json
+
+### RESTAURANT search STATE
+GET http://localhost:3000/restaurants_state/IL/2.json
+
+### RESTAURANT search NAME
+GET http://localhost:3000/restaurants_name/bonchon/1.json
 
 ### USER create
 POST http://localhost:3000/users
@@ -28,7 +41,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "test2@test2.com",
+  "email": "test@test.com",
   "password": "password"
 }
 
@@ -42,14 +55,16 @@ Authorization: Bearer {{billyjwt}}
 Content-Type: application/json
 
 {
-  "restaurant_id": 4195236487727458,
-  "restaurant_status": "go",
-  "restaurant_name": "Hot Woks Cool Sushi on Pulaski",
-  "restaurant_phone": "(773) 282-1818",
-  "hours": "Daily: 11:30am-9:30pm",
-  "price_range": "$$",
-  "cuisines": "Asian Fusion, Japanese, Sushi",
-  "address": "3930 N Pulaski Ave Chicago, IL 60641"
+  "restaurant_id": 4187931987631212,
+  "restaurant_status": "been",
+  "restaurant_name": "Elephant & Castle",
+  "restaurant_phone": "(312) 236-6656",
+  "hours": "Daily: 6:30am-11:30pm",
+  "price_range": "$$$",
+  "cuisines": "Bar Food, British (Traditional)",
+  "address": "111 W Adams St Chicago, IL 60603",
+  "restaurant_website": "http://www.elephantcastle.com",
+  "fav_menu_item": "Shepherd's Pie"
 }
 ### MY_RESTAURANT show (user must be logged in)
 GET http://localhost:3000/my_restaurants/1.json
@@ -62,7 +77,7 @@ Authorization: Bearer {{billyjwt}}
 content-type: application/json
 
 {
-  "restaurant_status": "been"
+  "post": "Bonchon is a chain that can be found in many places across the US with a specialty in Korean fried chicken that is so so delicious.ATMOSPHERE/ARCHITECTURE: N/A/10 As this was in COVID times, I never got the chance to dine in here. SERVICE: 10/10 Upon the numerous times that I have ordered delivery from here, they have always been quick to deliver with utensils and napkins provided each time. FOOD: 10/10 Soy Garlic Chicken Strips/Wings - 10/10 - This is the king of all fried chicken for any chain restaurant. They get it so perfect every time. Crispy, but not hard. The glaze is nice sweet with the good aromatics of garlic and saltiness of soy sauce that make a perfect package. Bulgogi Tacos - 9/10 - Ironically, the bulgogi within these tacos is one of the best. Tender meat with that sweet KBBQ flavor that you crave. Amazingly, the meat is not out of place at all within a taco and makes for excellent fusion food. Takoyaki - 7/10 - This was average. Takoyaki is definitely some sort of pre-made or prepped stuff, but it is still appetizing enough. It just does not wow you especially after their hard hitters. This is by no means a must try at all. VALUE: 7/10 The chicken is a touch on the expensive side I will say, however the quality is there. PROBABILITY OF RETURN: 10/10 Been back here dozens of times. TO EAT OR NOT TO EAT: EAT! OVERALL: 9/10"
 }
 
 ### FRIENDS create (sender must be logged in)
@@ -73,10 +88,6 @@ Content-Type: application/json
 {
   ""
 }
-
-### CONTENT index
-
-### CONTENT create
 
 ### COMMENT index
 

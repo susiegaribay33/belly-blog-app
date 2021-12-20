@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_12_161910) do
+ActiveRecord::Schema.define(version: 2021_12_16_031226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 2021_12_12_161910) do
     t.integer "content_id"
     t.integer "commenter_id"
     t.string "sub_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "contents", force: :cascade do |t|
-    t.integer "poster_id"
-    t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_161910) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "fav_menu_item"
+    t.text "post"
   end
 
   create_table "users", force: :cascade do |t|
