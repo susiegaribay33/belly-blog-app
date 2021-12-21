@@ -15,23 +15,17 @@ class RestaurantsController < ApplicationController
   # end
 
   def search_zipcode
-    zipcode = params[:zipcode]
-    state = params[:state]
-    restaurant_name = params[:name]
-
-
-    if 
-      response = HTTP.headers("X-API-KEY" => "#{Rails.application.credentials.dm_api_key}").get("https://api.documenu.com/v2/restaurants/search/fields?page=#{params[:page]}&zip_code=#{params[:zipcode]}")
+    response = HTTP.headers("X-API-KEY" => "#{Rails.application.credentials.dm_api_key}").get("https://api.documenu.com/v2/restaurants/search/fields?page=#{params[:page]}&zip_code=#{params[:zipcode]}&fullmenu=true")
     render json: response.parse
   end
 
   def search_state
-    response = HTTP.headers("X-API-KEY" => "#{Rails.application.credentials.dm_api_key}").get("https://api.documenu.com/v2/restaurants/search/fields?page=#{params[:page]}&state=#{params[:state]}")
+    response = HTTP.headers("X-API-KEY" => "#{Rails.application.credentials.dm_api_key}").get("https://api.documenu.com/v2/restaurants/search/fields?page=#{params[:page]}&state=#{params[:state]}&fullmenu=true")
     render json: response.parse
   end
 
   def search_name
-    response = HTTP.headers("X-API-KEY" => "#{Rails.application.credentials.dm_api_key}").get("https://api.documenu.com/v2/restaurants/search/fields?page=#{params[:page]}&restaurant_name=#{params[:name]}")
+    response = HTTP.headers("X-API-KEY" => "#{Rails.application.credentials.dm_api_key}").get("https://api.documenu.com/v2/restaurants/search/fields?page=#{params[:page]}&restaurant_name=#{params[:name]}&fullmenu=true")
     render json: response.parse
   end
 

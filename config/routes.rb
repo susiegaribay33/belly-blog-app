@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #restaurants
   get '/restaurants/:page' => 'restaurants#index'
   get '/restaurant/:restaurant_id' => 'restaurants#show'
-  get '/restaurants_cuisine/:cuisine/:page' => 'restaurants#search_cuisine'
+  # get '/restaurants_cuisine/:cuisine/:page' => 'restaurants#search_cuisine'
   get '/restaurants_zip/:zipcode/:page' => 'restaurants#search_zipcode'
   get '/restaurants_state/:state/:page' => 'restaurants#search_state'
   get '/restaurants_name/:name/:page' => 'restaurants#search_name'

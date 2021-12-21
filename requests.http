@@ -1,5 +1,5 @@
 #Test JWTs
-@billyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Mzk3NzIyNTR9.B-3EwGaVRs8UT3PIzx-49LAMnN2s9clmQJ6ceebd1nw
+@billyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDAxNDE4NzN9.ju3Rmhzi6Ml8r70EzYM6cBNAYhYEppgYrhDlya-DO7c
 #^test@test.com
 
 @rubyjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Mzk0MTE4NDB9.YiqL27GkvICZvuicGdQiV2pP4k7wyGFLcFfbEHr3Y30
